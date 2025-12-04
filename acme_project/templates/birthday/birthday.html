@@ -4,6 +4,14 @@
 
 {% block content %}
 
+    {% if '/edit/' in request.path %}
+        <h1>Редактировать запись {{form.instance.pk}} </h1>
+    {% elif '/delete/ int request.path'%}
+        <h1>Удалить запись {{form.data.pk}}</h1>
+    {% else %}
+        <h1>Создать запись</h1>
+    {% endif %}
+
 <div class="card col-4">
     <div class="card-header">
         Калькулятор ожидания дня рождения
