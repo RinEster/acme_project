@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Birthday 
+from .models import Birthday, Congratulation
 
 from django.core.mail import send_mail
 
@@ -32,3 +32,9 @@ class BirthdayForm(forms.ModelForm):
             raise ValidationError(
                 'Мы тоже любим Битлз, но введите, пожалуйста, настоящее имя!'
             ) 
+
+class CongratulationForm(forms.ModelForm):
+    
+    class Meta:
+        model = Congratulation
+        fields = ('text',) 
